@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<math.h>
+float  delta;
+float x0, x1;
+float fun(float *a, float *b, float *c, float *x0, float *x1)
+{
+ float a1=*a, b1=*b, c1=*c, xo, xi;
+    delta=(b1*b1)-(4*a1*c1);
+    if(delta<0)
+    {
+                return 0;
+    }               
+    if(delta==0)
+    {
+                
+                xo=-b1/2*a1;
+                *x0=xo; 
+                return 1;
+    }
+    if(delta>0)
+    {
+    
+    xo=(-b1-sqrt(delta))/2*a1;
+    xi=(-b1+sqrt(delta))/2*a1;
+    *x0=xo, *x1=xi;
+    return 2;
+    }
+}
+main()
+{
+float a, b, c;
+int x;
+printf("podaj wspolczynniki a , b, c \n");
+scanf("%f",&a);
+scanf("%f",&b);
+scanf("%f",&c);
+x=fun(&a,&b,&c, &x0, &x1);
+switch(x)
+{
+         case 0:
+         printf("brak miejsc zerowych");
+         break;
+         case 1:
+         printf("jedno miejsce zerowe - %f",x0);
+         break;
+         case 2:
+         printf("dwa miejsca zerowe - %f , %f",x0, x1);
+         break;
+}
+}
