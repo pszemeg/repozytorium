@@ -1,0 +1,27 @@
+#include<stdio.h>
+int new(int n, int k)
+{
+    int x;
+    if(k==0 || n==k)
+    {
+        return 1;
+    }
+    else
+    {
+        x=new((n-1),(k-1))+new((n-1),k);
+        return x;
+    }
+}
+main()
+{
+int n, k, p;
+printf("podaj n i k \n");
+scanf("%d",&n);
+scanf("%d",&k);
+if(n==0 || k>n)
+{
+    printf("podane wartosci sa nieprawidlowe");
+}
+p=new(n, k);
+printf("wartosc wynosi %d ",p);
+}
