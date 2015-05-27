@@ -1,0 +1,41 @@
+#include <stdio.h> 
+#define ROW1 2
+#define COL1 3
+#define ROW2 3
+#define COL2 2
+main()
+{
+    int a ,b , c ;
+    float tab3[ROW1][COL2];
+    float tab1[ROW1][COL1]=
+                        {
+        {1,2,3},
+        {2,3,4},
+                        };
+     float tab2[ROW2][COL2]=
+                        {
+        {2,3},
+        {3,4},
+        {4,5},
+                        };
+    for(a=0; a<ROW1; a++)
+          {
+             for(b=0; b<COL1; b++)
+                {  
+                tab3[a][b]=0;
+                for(c=0; c<COL1 ; c++)
+                                    {
+                                    tab3[a][b]=tab3[a][b]+(tab1[a][c]*tab2[c][b]);
+               
+                                    }
+                }     
+           }                 
+     for(a=0; a<ROW1; a++)
+            {
+                printf("\n");
+                for(b=0; b<COL2; b++)
+                {
+                    printf("%3.1f " ,tab3[a][b]);
+                }
+            }
+}
