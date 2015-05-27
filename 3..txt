@@ -1,0 +1,33 @@
+#include <stdio.h>
+#define ROW 2
+#define COL 3
+main()
+{
+    int a ,b;
+    int tab3[ROW][COL];
+    int tab1[ROW][COL]={ 
+        {1,2,3},
+        {2,3,4},
+                        };
+     int tab2[ROW][COL]={
+        {2,3,4},
+        {3,4,5},
+                        };
+    for(a=0; a<ROW; a++)
+            {
+             
+            for(b=0; b<COL; b++)
+                {
+               tab3[a][b]= tab1[a][b]+tab2[a][b];
+               
+                }
+             }
+     for(a=0; a<ROW; a++)
+            {
+                printf("\n");
+                for(b=0; b<COL; b++)
+                {
+                    printf("%d " ,tab3[a][b]);
+                }
+            }
+}
