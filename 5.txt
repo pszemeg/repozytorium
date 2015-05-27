@@ -1,0 +1,30 @@
+#include<stdio.h>
+#define ROZMIAR 100
+char napis[ROZMIAR] ;
+int i;
+char * isElement(char tab[], char znak)
+{   
+    for(i=0; napis[i]!='\0' ; i++)
+    {
+        if(napis[i]==znak )
+        {
+            return &napis[i];
+        }
+    }
+    return NULL;
+}    
+            
+        
+main()
+{
+fgets(napis, ROZMIAR, stdin);
+char *x;
+x=isElement(napis,'b');
+if(x!=NULL)
+{    
+printf(" %c",*x);
+}
+else
+{
+printf(" w ciagu nie ma znaku b");
+}
