@@ -1,0 +1,21 @@
+#include<stdio.h> 
+main()
+{
+int kropka,   gwiazdka, i,z, x, y;
+printf("podaj liczbe rzedow\n");
+scanf("%d",&z);
+gwiazdka=1;
+for(i=0, kropka=z-1 ; i<z  ; i++ , kropka=kropka-1, gwiazdka=gwiazdka+2)
+        {
+              for(x=kropka ;  x>0 ; x=x-1)
+        {            
+                           putchar(' ');
+        }
+              for(y=gwiazdka ; y>0 ; y=y-1)
+        {
+                             putchar('*');
+        }
+              printf("\n");
+              }
+
+}
