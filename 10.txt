@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+int** createMatrix(int n)
+{
+int **tab, i; 
+tab= (int**) malloc(n * sizeof(int*));
+if(tab==0)
+return NULL;
+for(i=0; i<n; i++)
+    {
+        tab[i]= (int*) malloc(n *sizeof(int));
+        if(tab[i]==0)
+            return NULL;
+    }
+    return tab;
+}
+void fillMatrix(int** tab, int n)
+{
+int i,x, liczba=1;
+for(i=0; i<n; i++)
+    {
+        for(x=0; x<n; x++)
+        {
+            tab[i][x]=liczba;
+            liczba++;
+        }
+    }
+}
+
+void copyMatrix(int*** dest, int** src, int n)
+{
+    *dest=createMatrix(n);
+    int a, i;
+    for(i=0; i<n; i++)
+    {
+        for(a=0; a<n; a++)
+        {
+            (*dest)[a][i]=src[a][i];
+            return;
+        }
+    }
+}
+
+int main()
+{
+int a, **tab,**tab1,i,x;
+printf("podaj wymiar macierzy ");
+scanf("%d",&a);
+tab=createMatrix(a);
+fillMatrix(tab, a);
+copyMatrix(&tab1, tab, a);
+for(x=0; x<a; x++)
+{
+    printf("\n");
+    for(i=0; i<a; i++)
+    {
+        printf("%d  ",tab[x][i]);
+    }
+}
+}
