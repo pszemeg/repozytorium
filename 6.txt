@@ -1,0 +1,30 @@
+#include <stdio.h> 
+#define ROZ 100
+char tab1[ROZ] , tab2[ROZ] ;
+int i;
+int isEqual(const char* str1, const char* str2) 
+    {
+                  for(i=0 ;  tab1[i]!='\0' && tab2[i]!='\0'; i++)
+                  {
+                           if(tab1[i]!=tab2[i])
+                           {
+                                               return false;
+                           }
+                  }
+                  return true ;
+    }
+main()
+{
+int x;
+fgets(tab1, ROZ, stdin);
+fgets(tab2, ROZ, stdin);
+x=isEqual(tab1 , tab2);
+if(x==true)
+{
+           printf("\n podane ciagi znakow sa takie same");
+}
+else 
+{    
+           printf("\n podane ciagi znakow sa rozne");
+}
+}
