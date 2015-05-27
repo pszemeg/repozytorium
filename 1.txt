@@ -1,0 +1,28 @@
+#include<stdio.h>
+main()
+{
+printf("napisz dzialanie\n");
+int a, b, d ;
+char c ;
+scanf("%c",&c);
+scanf("%d",&a);
+scanf("%d",&b);
+switch(c)
+{
+    case '+':
+    d=a+b;
+    printf("%d",d);
+    break;
+    case '-':
+    d=a-b;
+    printf("%d",d);
+    break;
+    case '*':
+    d=a+b;
+    printf("%d",d);
+    break;
+    case '/':
+    d=a/b;
+    printf("%d",d);
+}
+}
