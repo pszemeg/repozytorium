@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+int* fun(int a)
+{
+int *tab , i;
+tab=malloc(a * sizeof(int));
+tab[0]=1;
+for(i=1;i<a;i++)
+    {
+        tab[i]=tab[i-1]+2;
+    }
+    
+return tab;
+}
+
+main()
+{
+int a, *x, p;
+printf("prosze podac liczbe");
+scanf("%d",&a);
+if(a<0)
+{
+    return NULL;
+}
+x=fun(a);
+for(p=0; p<a; p++)
+    {
+        printf("%d \n",x[p]);
+    }
+free(x);
+}
